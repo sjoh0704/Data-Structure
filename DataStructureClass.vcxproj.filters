@@ -27,6 +27,12 @@
     <ClCompile Include="binary_search.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="selection_sort.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="prac03.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Time.h">

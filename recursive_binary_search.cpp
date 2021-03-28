@@ -10,17 +10,10 @@ int main() {
 	return 0;
 }
 int binary_search(int a[], int start, int last, int target) {
-	
 
 	if (start > last)
 		return -1;
-
-
 	int mid = (start + last) / 2;
-	
-	
-
-
 	if (a[mid] == target) {
 		return mid;
 	}

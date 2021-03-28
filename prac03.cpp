@@ -26,34 +26,45 @@ int main() {
 	return 0;
 }
 void swapElement(int& a, int& b) {
-	//precondition: 
+	//precondition: two int type data a, b
 	int tmp = a;
 	a = b;
 	b = tmp;
+	//postcondition: a and b is swaped
+	//return: nothing
 }
 int min_select(int a[], int n) {
+	//precondition: a is an array with n size
+
+
 	int minPos(0);
 	int currentPos(1);
 
 	while (currentPos < n) {
 		if (a[currentPos] < a[minPos])
+			//invariant: minPos is minimum value from a[0] to a[currentPos]
 			minPos = currentPos;
 
 		currentPos++;
 	}
+	//postcondition: minPos is the index that has minimum value from a[0] to a[n]
 
 	return minPos;
+	//return: return index which has minimum value
 }
 void selection_sort(int a[], int size) {
+	//precondition: a is an array with indexed from 0 to size-1 
 
 	int last(size - 1);
 	int minPos;
 
 	while (last > 0) {
+		//invariant: a is sorted from a[last] to a[size-1] 
 		minPos = min_select(a, last + 1);
 		swapElement(a[minPos], a[last]);
 		last--;
 	}
-
+	//postcondition: a is an sorted array
+	//return: nothing
 
 }

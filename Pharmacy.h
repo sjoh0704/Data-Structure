@@ -7,15 +7,15 @@ class Pharmacy
 	
 private:
 	
-	char name;
+	string name;
 	int distance;
 	int mask_stock;
 	int arrival_time;
 
 public:
-	static int count;
-	char getName();
-	void setName(char);
+	
+	string getName();
+	void setName(string);
 	Pharmacy();
 	
 

@@ -4,19 +4,20 @@
 #include<cstdlib>
 #include<ctime>
 using namespace std;
-int Pharmacy::count = 0;
+
 void swapElement(Pharmacy[],int, int);
 int maxSelect(Pharmacy p[], int n);
 void selectionSort(Pharmacy[], int size);
+int binary_search(Pharmacy[], int, string);
 int main() {
-	srand((unsigned int)time(NULL));
+	
 	Pharmacy ph[10];
-
-	cout << Pharmacy::count << endl;
+	string name[10] = { "Bexar", "Austin", "Folsom", "Juno", 
+		"Havana", "Icehouse", "Grizzly", "Essex", "Diablo","Cactus" };
 	
 	for (int i = 0; i < 10; i++) {
 		
-		ph[i].setName(rand() % 26 + 65);
+		ph[i].setName(name[i]);
 		
 	}
 	for (int i = 0; i < 10; i++) {
@@ -30,6 +31,11 @@ int main() {
 	
 		cout << ph[i].getName() << endl;
 	}
+	string target1 = "Juno";
+	string target2 = "Nova";
+	cout << target1.compare(target2) << endl;
+	cout << binary_search(ph, 10, target1) << endl;
+	cout << binary_search(ph, 10, target2) << endl;
 
 
 	return 0;
@@ -46,7 +52,7 @@ int maxSelect(Pharmacy p[], int n) {
 
 	int maxPos = 0;
 	for (int i = 1; i < n;i++) 
-		if (int(p[maxPos].getName()) <= int(p[i].getName())) 
+		if (p[maxPos].getName().compare(p[i].getName()) == -1)
 			maxPos = i;
 
 	return maxPos;
@@ -61,6 +67,24 @@ void selectionSort(Pharmacy p[], int size) {
 		cout << maxPos << "," << last << endl;
 		last--;
 	}
+
+}
+int binary_search(Pharmacy p[], int size, string target_name) {
+	int first = 0;
+	int last = size-1;
+	
+	while (first <= last) {
+		int mid = (first + last) / 2;
+		if (p[mid].getName().compare(target_name) == 0) {
+			return mid;
+		}
+		else if (p[mid].getName().compare(target_name) == 1)
+			last = mid - 1;
+		else
+			first = mid + 1;
+		
+	}
+	return -1;
 
 }
 

@@ -33,7 +33,6 @@ int main() {
 	}
 	string target1 = "Juno";
 	string target2 = "Nova";
-	cout << target1.compare(target2) << endl;
 	cout << binary_search(ph, 10, target1) << endl;
 	cout << binary_search(ph, 10, target2) << endl;
 

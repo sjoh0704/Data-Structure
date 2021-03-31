@@ -16,6 +16,8 @@ public:
 	
 	string getName();
 	void setName(string);
+	void setMask(int);
+	int getMask();
 	Pharmacy();
 	
 

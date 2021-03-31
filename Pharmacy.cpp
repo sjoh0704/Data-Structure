@@ -16,3 +16,10 @@ string Pharmacy::getName() {
 void Pharmacy::setName(string name) {
 	this->name = name;
 }
+
+void Pharmacy::setMask(int mask) {
+	this->mask_stock = mask;
+}
+int Pharmacy::getMask() {
+	return this->mask_stock;
+}

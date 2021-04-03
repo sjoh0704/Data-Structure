@@ -16,51 +16,57 @@
     <Filter Include="소스 파일\실습">
       <UniqueIdentifier>{eb9707b5-24c6-4914-83a3-7f8e233ac9a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\과제">
+      <UniqueIdentifier>{c9333be4-1b3e-44c2-924b-2e2649dae623}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\연습">
+      <UniqueIdentifier>{f5d1cede-a48e-4150-af7e-a079f44698ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="prac06.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
     <ClCompile Include="prac01.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\실습</Filter>
     </ClCompile>
     <ClCompile Include="prac02.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Time.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="binary_search.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="selection_sort.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\실습</Filter>
     </ClCompile>
     <ClCompile Include="prac03.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="bubble_sort.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\실습</Filter>
     </ClCompile>
     <ClCompile Include="prac04.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="recursive_binary_search.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="homework.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Pharmacy.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\실습</Filter>
     </ClCompile>
     <ClCompile Include="prac05.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\실습</Filter>
     </ClCompile>
-    <ClCompile Include="Value.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="homework.cpp">
+      <Filter>소스 파일\과제</Filter>
     </ClCompile>
     <ClCompile Include="List.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\실습</Filter>
     </ClCompile>
-    <ClCompile Include="prac06.cpp">
+    <ClCompile Include="Time.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="binary_search.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="bubble_sort.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="recursive_binary_search.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="selection_sort.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="Pharmacy.cpp">
+      <Filter>소스 파일\과제</Filter>
+    </ClCompile>
+    <ClCompile Include="Value.cpp">
       <Filter>소스 파일\실습</Filter>
     </ClCompile>
   </ItemGroup>

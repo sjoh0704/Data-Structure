@@ -33,6 +33,7 @@
     </ClCompile>
     <ClCompile Include="List.cpp" />
     <ClCompile Include="List2.cpp" />
+    <ClCompile Include="List3.cpp" />
     <ClCompile Include="Pharmacy.cpp" />
     <ClCompile Include="prac01.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -52,6 +53,7 @@
     <ClCompile Include="prac06.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="prac08.cpp" />
     <ClCompile Include="quiclk_sort.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -63,11 +65,14 @@
     </ClCompile>
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Value.cpp" />
-    <ClCompile Include="prac07.cpp" />
+    <ClCompile Include="prac07.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="List.h" />
     <ClInclude Include="List2.h" />
+    <ClInclude Include="List3.h" />
     <ClInclude Include="Pharmacy.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Value.h">

@@ -75,10 +75,16 @@
     <ClCompile Include="linked_list.cpp">
       <Filter>소스 파일\연습</Filter>
     </ClCompile>
-    <ClCompile Include="List2.cpp">
-      <Filter>소스 파일\연습</Filter>
-    </ClCompile>
     <ClCompile Include="prac07.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="prac08.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="List3.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="List2.cpp">
       <Filter>소스 파일\실습</Filter>
     </ClCompile>
   </ItemGroup>
@@ -96,6 +102,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="List2.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="List3.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

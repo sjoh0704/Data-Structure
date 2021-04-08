@@ -8,7 +8,7 @@ public:
 	void insert(const ListElementType& elem);
 	bool first(ListElementType& elem);
 	bool next(ListElementType& elem);
-	bool remove(ListElementType& elem);
+	void remove(ListElementType& target);
 private:
 	struct Node;
 	typedef Node* Link;

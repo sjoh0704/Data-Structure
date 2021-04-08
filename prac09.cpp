@@ -10,6 +10,15 @@ int main() {
 		cin >> x;
 	}
 
+	cout << "\n지울 숫자 입력" << endl;
+
+	ListElementType x2;
+	cin >> x2;
+	l.remove(x2);
+	
+	cout << "\n결과 출력" << endl;
+
+
 	ListElementType tmp;
 	bool emptyCheck = l.first(tmp);
 	while (emptyCheck) {

@@ -1,27 +1,26 @@
 #pragma once
-// linked list
+// doubly linked list
 typedef int ListElementType;
-class List2
+class List5
 {
 public:
-	List2();
-	~List2();
+	List5();
 	void insert(const ListElementType& elem);
 	bool first(ListElementType& elem);
 	bool next(ListElementType& elem);
-
-
+	bool previous(ListElementType& elem);
 private:
 	struct Node;
 	typedef Node* Link;
-	struct Node {
+	struct Node
+	{
 		ListElementType elem;
 		Link next;
+		Link previous;
 	};
+
 	Link head;
-	Link tail;
 	Link current;
-
-
+	Link tail;
 };
 

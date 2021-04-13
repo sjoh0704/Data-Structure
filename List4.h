@@ -1,5 +1,6 @@
 #pragma once
 typedef int ListElementType;
+// dummy in order linked list 
 class List4
 {
 

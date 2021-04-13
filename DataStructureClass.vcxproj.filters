@@ -69,9 +69,6 @@
     <ClCompile Include="Value.cpp">
       <Filter>소스 파일\실습</Filter>
     </ClCompile>
-    <ClCompile Include="quiclk_sort.cpp">
-      <Filter>소스 파일\연습</Filter>
-    </ClCompile>
     <ClCompile Include="linked_list.cpp">
       <Filter>소스 파일\연습</Filter>
     </ClCompile>
@@ -93,11 +90,26 @@
     <ClCompile Include="List4.cpp">
       <Filter>소스 파일\실습</Filter>
     </ClCompile>
-    <ClCompile Include="listarray_practice.cpp">
+    <ClCompile Include="inordered_list.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="quick_sort.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="listarray.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="linkedlist2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="doubly_linked_list.cpp">
       <Filter>소스 파일\연습</Filter>
     </ClCompile>
-    <ClCompile Include="소스.cpp">
-      <Filter>소스 파일\연습</Filter>
+    <ClCompile Include="List5.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="prac10.cpp">
+      <Filter>소스 파일\실습</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +132,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="List4.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="List5.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

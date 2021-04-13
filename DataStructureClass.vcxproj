@@ -25,7 +25,13 @@
     <ClCompile Include="bubble_sort.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="doubly_linked_list.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="homework.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="inordered_list.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="linked_list.cpp">
@@ -35,6 +41,7 @@
     <ClCompile Include="List2.cpp" />
     <ClCompile Include="List3.cpp" />
     <ClCompile Include="List4.cpp" />
+    <ClCompile Include="List5.cpp" />
     <ClCompile Include="Pharmacy.cpp" />
     <ClCompile Include="prac01.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -60,7 +67,8 @@
     <ClCompile Include="prac09.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="quiclk_sort.cpp">
+    <ClCompile Include="prac10.cpp" />
+    <ClCompile Include="quick_sort.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="recursive_binary_search.cpp">
@@ -74,16 +82,19 @@
     <ClCompile Include="prac07.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="listarray_practice.cpp">
+    <ClCompile Include="listarray.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="소스.cpp" />
+    <ClCompile Include="linkedlist2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="List.h" />
     <ClInclude Include="List2.h" />
     <ClInclude Include="List3.h" />
     <ClInclude Include="List4.h" />
+    <ClInclude Include="List5.h" />
     <ClInclude Include="Pharmacy.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Value.h">

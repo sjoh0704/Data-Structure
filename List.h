@@ -1,4 +1,5 @@
 #pragma once
+//list array
 //Characteristics:
 //A List L stores items of some type, called 	ListElementType.
 

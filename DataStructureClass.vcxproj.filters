@@ -111,6 +111,9 @@
     <ClCompile Include="prac10.cpp">
       <Filter>소스 파일\실습</Filter>
     </ClCompile>
+    <ClCompile Include="dynamic _linear_list.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Time.h">

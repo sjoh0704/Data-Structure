@@ -1,3 +1,5 @@
+//list made by array
+
 #include<assert.h>
 #include<iostream>
 typedef int ListElementType;

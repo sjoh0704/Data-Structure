@@ -1,6 +1,6 @@
 #include"List5.h"
 #include<iostream>
-//practice- doubly linked list 
+//practice- doubly linked list
 using namespace std;
 int main() {
 

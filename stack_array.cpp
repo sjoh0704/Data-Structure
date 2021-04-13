@@ -1,8 +1,11 @@
+//stack made by array
+
 #include<iostream>
 #include<assert.h>
 using namespace std;
 const int maxStackSize = 1000;
-typedef int StackElementType;
+
+template <class StackElementType>
 class Stack {
 public:
 	Stack();
@@ -16,47 +19,54 @@ private:
 
 };
 
-Stack::Stack() {
+template<class StackElementType>
+Stack<StackElementType>::Stack() {
 	topIndex = -1;
 }
-void Stack::push(StackElementType item) {
+
+template<class StackElementType>
+void Stack<StackElementType>::push(StackElementType item) {
 	topIndex++;
 	assert(topIndex < maxStackSize);
 	stackArray[topIndex] = item;
 }
-StackElementType Stack::pop() {
+
+template<class StackElementType>
+StackElementType Stack<StackElementType>::pop() {
 
 	assert(topIndex >= 0);
 	int returnIndex = topIndex;
 	topIndex--;
 	return stackArray[returnIndex];
 }
-StackElementType Stack::top() {
+
+template<class StackElementType>
+StackElementType Stack<StackElementType>::top() {
 	assert(topIndex >= 0);
 	return stackArray[topIndex];
 }
-bool Stack::isEmpty() {
+
+template<class StackElementType>
+bool Stack<StackElementType>::isEmpty() {
 	return topIndex == -1;
 }
 
 int main() {
 
-	Stack stack;
-	StackElementType s;
+	Stack<int> stack;
+	int s;
 	cin >> s;
 	while (s) {
 		stack.push(s);
 		cin >> s;
 	}
-
-	StackElementType tmp;
+	
+	int tmp;
 	
 	while (!stack.isEmpty()) {
 		tmp = stack.pop();
 		cout << tmp << endl;
 	}
-
-
 
 
 	return 0;

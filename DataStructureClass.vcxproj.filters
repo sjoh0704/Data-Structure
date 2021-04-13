@@ -90,18 +90,6 @@
     <ClCompile Include="List4.cpp">
       <Filter>소스 파일\실습</Filter>
     </ClCompile>
-    <ClCompile Include="inordered_list.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="quick_sort.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="listarray.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="linkedlist2.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="doubly_linked_list.cpp">
       <Filter>소스 파일\연습</Filter>
     </ClCompile>
@@ -112,6 +100,21 @@
       <Filter>소스 파일\실습</Filter>
     </ClCompile>
     <ClCompile Include="dynamic _linear_list.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="inordered_list.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="linkedlist2.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="listarray.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="quick_sort.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="stack_array.cpp">
       <Filter>소스 파일\연습</Filter>
     </ClCompile>
   </ItemGroup>

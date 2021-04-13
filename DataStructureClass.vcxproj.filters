@@ -117,6 +117,9 @@
     <ClCompile Include="stack_array.cpp">
       <Filter>소스 파일\연습</Filter>
     </ClCompile>
+    <ClCompile Include="stack_linkedlist.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Time.h">

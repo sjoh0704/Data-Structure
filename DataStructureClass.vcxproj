@@ -82,7 +82,9 @@
     <ClCompile Include="selection_sort.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="stack_array.cpp" />
+    <ClCompile Include="stack_array.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Value.cpp" />
     <ClCompile Include="prac07.cpp">
@@ -94,6 +96,7 @@
     <ClCompile Include="linkedlist2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="stack_linkedlist.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="List.h" />

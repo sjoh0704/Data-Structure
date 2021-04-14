@@ -1,3 +1,6 @@
+//practice 11
+//array 로 구현된 stack을 이용하여 RPN 구현하기 
+
 #include<iostream>
 #include"StackArray.h"
 #include <iostream>

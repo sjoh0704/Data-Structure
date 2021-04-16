@@ -1,3 +1,5 @@
+//practice06
+//list array
 #include<iostream>
 #include"List.h"
 using namespace std;

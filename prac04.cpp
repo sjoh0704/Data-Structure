@@ -1,4 +1,4 @@
-// ½Ç½À4 recursive combination
+// practice04 recursive combination
 #include<iostream>
 using namespace std;
 int cnt = 0;

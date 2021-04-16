@@ -5,10 +5,12 @@ typedef char ListElementType;
 class MyList {
 public:
 	MyList();
+	~MyList();
 	void insert_to_head(const ListElementType& elem);
 	void insert_to_tail(const ListElementType& elem);
 	bool first(ListElementType& elem);
 	bool next(ListElementType& elem);
+
 private:
 	struct Node;
 	typedef Node* Link;
@@ -25,6 +27,14 @@ MyList::MyList() {
 	head = 0;
 	current = 0;
 	tail = 0;
+}
+
+MyList::~MyList() {
+	while (head != 0) {
+		Link delNode = head;
+		head = head->next;
+		delete delNode;
+	}
 }
 
 void MyList::insert_to_head(const ListElementType& elem) {
@@ -71,6 +81,8 @@ bool MyList::next(ListElementType& elem) {
 
 
 int main() {
+
+	//insert to head
 	MyList l;
 	char tmp;
 	cin >> tmp;
@@ -83,8 +95,10 @@ int main() {
 		cout << tmp << endl;;
 		notEmpty = l.next(tmp);
 	}
-	MyList l2;
 
+
+	//insert to tail 
+	MyList l2;
 	cin >> tmp;
 	while (tmp != 'q') {
 		l2.insert_to_tail(tmp);

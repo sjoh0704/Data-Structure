@@ -123,11 +123,14 @@
     <ClCompile Include="prac11.cpp">
       <Filter>소스 파일\실습</Filter>
     </ClCompile>
-    <ClCompile Include="StackArray.cpp">
-      <Filter>소스 파일\실습</Filter>
-    </ClCompile>
     <ClCompile Include="prac12.cpp">
       <Filter>소스 파일\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="mystack.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="mystack2.cpp">
+      <Filter>소스 파일\연습</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

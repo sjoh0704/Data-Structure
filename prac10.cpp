@@ -1,6 +1,7 @@
+// practice10
+// doubly linked list  구현하기 
 #include"List5.h"
 #include<iostream>
-//practice- doubly linked list
 using namespace std;
 int main() {
 

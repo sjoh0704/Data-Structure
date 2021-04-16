@@ -1,5 +1,5 @@
 #pragma once
-// in order linked list 
+// in-order linked list 
 typedef int ListElementType;
 class List3
 {

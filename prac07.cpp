@@ -1,4 +1,4 @@
-//½Ç½À 7. Linked List
+//practice 7. Linked List
 
 #include<iostream>
 #include"List2.h"

@@ -1,6 +1,6 @@
+// dummy head in-order linked list with remove function 
 #pragma once
 typedef int ListElementType;
-// dummy in order linked list 
 class List4
 {
 

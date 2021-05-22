@@ -1,4 +1,5 @@
 //practice06
+//20160518 ©ю╫баж
 //list array
 #include<iostream>
 #include"List.h"

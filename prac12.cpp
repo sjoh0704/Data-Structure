@@ -1,4 +1,5 @@
 //practice12 
+// 20160518 오승주
 // 앞의 예제에서 “stack.h” 대신 #include <stack> 을 사용해보자 
 #include<iostream>
 #include<stack>

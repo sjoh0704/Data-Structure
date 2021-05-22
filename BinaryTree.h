@@ -16,7 +16,7 @@ public:
 	void makeRight(const BinaryTree* T2);
 
 
-private:
+public:
 	bool nullTree;
 	BinaryTree* leftTree;
 	BinaryTree* rightTree;

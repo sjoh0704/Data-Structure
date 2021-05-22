@@ -36,7 +36,7 @@ int main()
 	table2.dump();
 
 
-	//3¹ø dump
+	//4¹ø dump
 	Table<int, CPhone> table3;
 	table3.insert(stringToInt("James"), CPhone("James", 19960704));
 	table3.insert(stringToInt("Agile"), CPhone("Agile", 19960705));

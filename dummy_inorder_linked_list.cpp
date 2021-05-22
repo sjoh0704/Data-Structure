@@ -64,7 +64,7 @@ bool MyList::next(ListElementType& elem) {
 void MyList::remove(const ListElementType& target) {
 	assert(head);
 	Link pred = head;
-	while (pred->next != 0 && pred->next->elem <= target)
+	while (pred->next != 0 && pred->next->elem < target)
 		pred = pred->next;
 
 	if (pred && pred->next && pred->next->elem == target) {
@@ -92,6 +92,8 @@ int main() {
 		notEmpty = l.next(tmp);
 	}
 
+
+	//remove  
 	l.remove('d');
 
 	notEmpty = l.first(tmp);

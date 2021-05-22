@@ -132,6 +132,57 @@
     <ClCompile Include="mystack2.cpp">
       <Filter>소스 파일\연습</Filter>
     </ClCompile>
+    <ClCompile Include="dummy_inorder_linked_list.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="insertion_sort.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="linkedlist_head_insertion.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="linkedlist_tail_insertion_remove.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="queue_array.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="dfs.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="prac13.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="prac14.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="table.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="prac15.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="CPhone.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="homework2.cpp">
+      <Filter>소스 파일\과제</Filter>
+    </ClCompile>
+    <ClCompile Include="array_hash_table.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="prac16.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="prac17.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="linked_list_queue.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="prac18.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Time.h">
@@ -159,6 +210,27 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="StackArray.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Queue.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Queue2.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Table.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CPhone.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Table2.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryTree.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BST.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

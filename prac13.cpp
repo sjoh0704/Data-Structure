@@ -1,4 +1,5 @@
 //실습 13
+// 20160518 오승주
 //circular queue구현하기 
 #include<iostream>
 #include"Queue.h"

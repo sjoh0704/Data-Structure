@@ -1,4 +1,5 @@
 // practice10
+// 20160518 오승주
 // doubly linked list  구현하기 
 #include"List5.h"
 #include<iostream>
@@ -25,8 +26,6 @@ int main() {
 		cout << tmp << endl;
 		notEmpty = l.previous(tmp);
 	}
-
 	
-
 	return 0;
 }

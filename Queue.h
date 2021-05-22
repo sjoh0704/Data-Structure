@@ -1,6 +1,6 @@
 #pragma once
 #include<assert.h>
-const int maxQueue = 3;
+const int maxQueue = 10;
 template<class queueElementType>
 class Queue
 {

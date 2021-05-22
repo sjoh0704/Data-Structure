@@ -1,3 +1,6 @@
+//practice 14
+// 20160518 ©ю╫баж
+//linked list queue
 #include <iostream>
 #include "Queue2.h"
 using namespace std;

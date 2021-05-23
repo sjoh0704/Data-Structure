@@ -183,6 +183,9 @@
     <ClCompile Include="prac18.cpp">
       <Filter>소스 파일\실습</Filter>
     </ClCompile>
+    <ClCompile Include="binary_tree.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Time.h">

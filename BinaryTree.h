@@ -8,15 +8,15 @@ class BinaryTree
 public:
 	BinaryTree();
 	bool isEmpty();
-	void insert(const btElementType& data);
+	virtual void insert(const btElementType& data);
 	btElementType getData();
 	BinaryTree* left();
 	BinaryTree* right();
-	void makeLeft(const BinaryTree* T1);
-	void makeRight(const BinaryTree* T2);
+	void makeLeft(BinaryTree* T1);
+	void makeRight(BinaryTree* T2);
 
 
-public:
+protected:
 	bool nullTree;
 	BinaryTree* leftTree;
 	BinaryTree* rightTree;
@@ -73,18 +73,18 @@ BinaryTree<btElementType>::right() {
 
 template<class btElementType>
 void
-BinaryTree<btElementType>::makeLeft(const BinaryTree* T1) {
+BinaryTree<btElementType>::makeLeft(BinaryTree* T1) {
 	assert(!isEmpty());
-	assert(left().isEmpty());
+	assert(left()->isEmpty());
 	delete left();
 	leftTree = T1;
 }
 
 template<class btElementType>
 void
-BinaryTree<btElementType>::makeRight(const BinaryTree* T2) {
+BinaryTree<btElementType>::makeRight(BinaryTree* T2) {
 	assert(!isEmpty());
-	assert(right().isEmpty());
+	assert(right()->isEmpty());
 	delete rightTree;
 	rightTree = T2;
 }

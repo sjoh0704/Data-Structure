@@ -1,3 +1,4 @@
+//array hash table
 #include<iostream>
 #include<assert.h>
 using namespace std;
@@ -123,7 +124,7 @@ HashTable<tableKeyType, tableDataType>::search(int& pos, const tableKeyType key)
 int main() {
 
 
-	HashTable<int, string> table;
+	HashTable<int, string> table;0
 	table.insert(19960101, "James");
 	table.insert(19960102, "panda");
 	table.insert(19960103, "Agile");

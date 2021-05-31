@@ -7,6 +7,7 @@ public:
 	MyQueue();
 	void enqueue(queueElementType elem);
 	queueElementType dequeue();
+	queueElementType front();
 	bool isEmpty();
 	
 private:
@@ -56,6 +57,13 @@ MyQueue<queueElementType>::dequeue() {
 }
 
 template<class queueElementType>
+queueElementType
+MyQueue<queueElementType>::front() {
+	assert(f);
+	return f->elem;
+}
+
+template<class queueElementType>
 bool
 MyQueue<queueElementType>::isEmpty() {
 	return bool(f == 0);
@@ -67,6 +75,7 @@ int main() {
 	queue.enqueue(4);
 	queue.enqueue(2);
 	queue.enqueue(3);
+	cout << queue.front() << endl;
 	queue.enqueue(4);
 	queue.enqueue(1);
 

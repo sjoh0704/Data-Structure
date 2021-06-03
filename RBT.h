@@ -44,6 +44,8 @@ public:
 	RBT <btElementType>* left();
 	RBT <btElementType>* right();
 
+	friend void printTree(RBT* start);
+	void printCase();
 protected:
 	RBT(btElementType data, Color color, bool nullTree);
 	Color color;
@@ -114,7 +116,10 @@ RBT<btElementType>::right() {
 
 template < class btElementType >
 void RBT<btElementType>::fixViolation(RBT*& root, RBT*& pt)
-{
+{	
+	cout << endl;
+	cout << "fix steps" << endl;
+
 	RBT* parent_pt = NULL;
 	RBT* grand_parent_pt = NULL;
 
@@ -126,15 +131,15 @@ void RBT<btElementType>::fixViolation(RBT*& root, RBT*& pt)
 		// Case A : pt의 아버지는 할아버지의 왼쪽 child
 		if (parent_pt == grand_parent_pt->left())
 		{
-			RBT* uncle_pt =grand_parent_pt->right();
+			RBT* uncle_pt = grand_parent_pt->right();
 
 			// Case1 : 삼촌 또한 빨강, 오직 Recoloring 실행
-			if (!uncle_pt->isEmpty() && ((RBT < btElementType >*)uncle_pt)->color == Red)
-			{
+			if (!uncle_pt->isEmpty() && uncle_pt->color == Red){
 				grand_parent_pt->color = Red;
 				parent_pt->color = Black;
 				uncle_pt->color = Black;
 				pt = grand_parent_pt;
+				
 			}
 			else {
 				// Case2 : pt는 그 아버지의 오른쪽 Child, Left-Rotate실행
@@ -142,40 +147,50 @@ void RBT<btElementType>::fixViolation(RBT*& root, RBT*& pt)
 				{
 					rotateLeft(root, parent_pt);
 					pt = parent_pt;
-					parent_pt = ((RBT < btElementType >*)pt->parent);
+					parent_pt = pt->parent;
+					
 				}
 				// Case3 : pt는 그 아버지의 왼쪽 Child, Right-Rotate실행
 				rotateRight(root, grand_parent_pt);
-				Color temp = parent_pt->color;
+				Color tmp = parent_pt->color;
 				parent_pt->color = grand_parent_pt->color;
-				grand_parent_pt->color = temp;
+				grand_parent_pt->color = tmp;
 				pt = parent_pt;
+				
 			}
 		}
 
 		// CaseB : pt의 아버지는 할아버지의 오른쪽 Child
 		else {
-			RBT* uncle_pt = ((RBT < btElementType >*)grand_parent_pt->left());
+			printCase();
+			RBT* uncle_pt = grand_parent_pt->left();
 			// Case1 : pt의 삼촌은 또한 빨간색, 오로지 Recoloring 실행
 			if ((!uncle_pt->isEmpty()) && (uncle_pt->color == Red)) {
 				grand_parent_pt->color = Red;
 				parent_pt->color = Black;
 				uncle_pt->color = Black;
 				pt = grand_parent_pt;
+				printCase();
+			
+			
 			}
 			else {
+		
 				// Case2 : pt는 그 아버지의 왼쪽 Child, Right-Rotate실행
 				if (pt == parent_pt->left()) {
 					rotateRight(root, parent_pt);
 					pt = parent_pt;
-					parent_pt = ((RBT < btElementType >*)pt->parent);
+					parent_pt = pt->parent;
+					printCase();
+					
 				}
 				// Case3 : pt는 그 아버지의 오른쪽 Child, Left-Rotate실행
 				rotateLeft(root, grand_parent_pt);
-				Color temp = parent_pt->color;
+				Color tmp = parent_pt->color;
 				parent_pt->color = grand_parent_pt->color;
-				grand_parent_pt->color = temp;
+				grand_parent_pt->color = tmp;
 				pt = parent_pt;
+				printCase();
 			}
 		}
 	}
@@ -185,23 +200,23 @@ void RBT<btElementType>::fixViolation(RBT*& root, RBT*& pt)
 template <class btElementType>
 void RBT<btElementType>::rotateLeft(RBT*& root, RBT*& pt)
 {
-	RBT* pt_right = ((RBT < btElementType >*)pt->right());
+	RBT* pt_right = pt->right();
 
-	((RBT < btElementType >*)pt)->rightTree = pt_right->left();
+	pt->rightTree = pt_right->left();
 
 	if (!pt->right()->isEmpty())
-		((RBT < btElementType >*)pt->right())->parent = pt;
+		pt->right()->parent = pt;
 
 	pt_right->parent = pt->parent;
 
 	if (pt->parent == NULL)
 		root = pt_right;
 
-	else if (pt == ((RBT < btElementType >*)pt->parent)->leftTree)
-		((RBT < btElementType >*)pt->parent)->leftTree = pt_right;
+	else if (pt == pt->parent->leftTree)
+	pt->parent->leftTree = pt_right;
 
 	else
-		((RBT < btElementType >*) pt->parent)->rightTree = pt_right;
+		pt->parent->rightTree = pt_right;
 
 	pt_right->leftTree = pt;
 	pt->parent = pt_right;
@@ -212,23 +227,23 @@ void RBT<btElementType>::rotateLeft(RBT*& root, RBT*& pt)
 template <class btElementType>
 void RBT<btElementType>::rotateRight(RBT*& root, RBT*& pt)
 {
-	RBT* pt_left = ((RBT < btElementType >*)pt->left());
+	RBT* pt_left = pt->left();
 
-	((RBT < btElementType >*)pt)->leftTree = pt_left->right();
+	pt->leftTree = pt_left->right();
 
 	if (!pt->left()->isEmpty())
-		((RBT < btElementType >*)pt->left())->parent = pt;
+		pt->left()->parent = pt;
 
 	pt_left->parent = pt->parent;
 
 	if (pt->parent == NULL)
 		root = pt_left;
 
-	else if (pt == ((RBT < btElementType >*)pt->parent)->leftTree)
-		((RBT < btElementType >*)pt->parent)->leftTree = pt_left;
+	else if (pt == pt->parent->leftTree)
+		pt->parent->leftTree = pt_left;
 
 	else
-		((RBT < btElementType >*) pt->parent)->rightTree = pt_left;
+		pt->parent->rightTree = pt_left;
 
 	pt_left->rightTree = pt;
 	pt->parent = pt_left;
@@ -240,10 +255,6 @@ void RBT <btElementType>::insert(btElementType& d)
 	RBT<btElementType>* pt = new RBT(d, Red, false);
 	//cout << pt->root << endl;
 	root = getRoot(root, pt, d);
-	cout << "----------" << endl;
-	cout << root->data<< endl;
-	cout << root->left()->data << endl;
-	cout << root->right()->data << endl;
 
 	fixViolation(root, pt);
 }
@@ -269,4 +280,61 @@ RBT <btElementType>* RBT <btElementType>::getRoot(RBT* root, RBT* pt, btElementT
 	}
 	return root;
 }
+template < class btElementType >
+void
+RBT <btElementType>::printCase() {
+	cout << endl;
+	cout << "---------------------------case--------------------------" << endl;
 
+	if (root->isEmpty())
+		cout << "\t\t" << 0;
+	else {
+		cout << "\t\t" << root->getData() << "/" << root->getColor() << endl;
+
+
+		if (root->left()->isEmpty())
+			cout << "\t" << 0;
+		else {
+			cout << "\t" << root->left()->getData() << "/" << root->left()->getColor();
+		}
+
+		if (root->right()->isEmpty())
+			cout << "\t\t" << 0 << endl;
+		else {
+			cout << "\t\t" << root->right()->getData() << "/" << root->right()->getColor() << endl;
+		}
+
+		if (root->left()->isEmpty()||root->left()->left()->isEmpty())
+			cout << 0;
+		else
+			cout << root->left()->left()->getData() << "/" << root->left()->left()->getColor();
+
+		if (root->left()->isEmpty() || root->left()->right()->isEmpty())
+			cout << "\t\t" << 0;
+		else
+			cout << "\t\t" << root->left()->right()->getData() << "/" << root->left()->right()->getColor();
+		cout << "  ";
+		if (root->right()->isEmpty() || root->right()->left()->isEmpty())
+			cout << "" << 0;
+		else
+			cout << "" << root->right()->left()->getData() << "/" << root->right()->left()->getColor();
+
+
+		if (root->right()->isEmpty() || root->right()->right()->isEmpty())
+			cout << "\t\t" << 0 << endl;
+		else
+			cout << "\t\t" << root->right()->right()->getData() << "/" << root->right()->right()->getColor() << endl;;
+
+
+		if (root->right()->isEmpty() || root->right()->right()->isEmpty() || root->right()->right()->left()->isEmpty())
+			cout << "\t\t\t";
+		else
+			cout << "\t\t\t" << root->right()->right()->left()->getData() << "/" << root->right()->right()->left()->getColor();
+		if (root->right()->isEmpty() || root->right()->right()->isEmpty() || root->right()->right()->right()->isEmpty())
+			cout << endl;
+		else
+			cout << "\t\t" << root->right()->right()->right()->getData() << "/" << root->right()->right()->right()->getColor();
+
+
+	}
+}

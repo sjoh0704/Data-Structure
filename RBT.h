@@ -6,10 +6,10 @@ using namespace std;
 enum Color {Red, Black};
 
 template < class btElementType >
-class RBT : public BST <char>
+class RBT : public BST <int>
 {
 public:
-	// Characteristics : BinaryTree와 BST를 상속받은 노드는 오른쪽 왼쪽의 노드만을 가지며 데이터를 넣는데,
+	// intacteristics : BinaryTree와 BST를 상속받은 노드는 오른쪽 왼쪽의 노드만을 가지며 데이터를 넣는데,
 	//                              크기를 비교하여 넣는 BST 규칙을 따르지만, RBT에는 각 노드가 색깔을 가지며 RB Tree의 규칙에 
 	//								위배되지 않게끔 insert된다. 삭제할 때도 마찬가지로 RB Tree의 특성에 맞게 삭제된다.
 	RBT();
@@ -44,7 +44,7 @@ protected:
 };
 template<class btElementType>
 RBT<btElementType>::RBT() {
-	BST<char>::BST();
+	BST<int>::BST();
 	color = Black;
 }
 

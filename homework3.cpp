@@ -13,20 +13,25 @@ int main() {
 	a->insert(v[1]);
 	a->insert(v[2]);
 	a->insert(v[3]);
+	a->insert(v[4]);
+	a->insert(v[5]);
+	a->insert(v[6]);
+	
 
-	printTree(a);
-	RBTPtr get11((RBTPtr)(a->retreive(v[3])));
-	if (get11->isEmpty())
-		cout << "not found" << endl;
-	else
-		cout << "found" << endl;
+	//printTree(a);
+	//printTree(a);
 
 	return 0;
 }
 
 void printTree(RBTPtr start){
 
-	cout << start->getData() << "/" << start->getColor()<<endl;
+
+	if (start->isEmpty())
+		cout << 0;
+	else
+		cout << start->getData() << "/" << start->getColor() << endl;
+
 	
 	if (start->left()->isEmpty())
 		cout << 0;

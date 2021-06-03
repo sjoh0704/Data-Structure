@@ -20,10 +20,10 @@ public:
 	// Postcondition : 색깔에 따른 Red Black Tree로 변환하여 insert됨
 	void fixViolation(RBT*& root, RBT*& pt);
 	// Postcondition : Case1, Case2, Case3의 상황에 따라 실행하여 위반한 규칙을 고침
-	RBT <btElementType>* BSTInsert(RBT* root, RBT* pt, btElementType& d);
+	RBT <btElementType>* getRoot(RBT* root, RBT* pt, btElementType& d);
 	// Precondition: 만약 d가 left child이면, 아버지 노드의 데이터보다 작아야한다.
 	//							만약 d가 right child이면, 아버지 노드의 데이터보다 커야한다.
-	// Postcondition : BST처럼 insert를 하여 BinaryTree와 다르게 parentTree 값도 설정
+	// Postcondition : BST처럼 insert를 하여 BinaryTree와 다르게 parent 값도 설정
 	// Return : insert된 BST Tree 주소를 반환
 	void rotateLeft(RBT*& root, RBT*& pt);
 	// Postcondition : RBT가 RotateLeft 됨
@@ -48,38 +48,49 @@ protected:
 	RBT(btElementType data, Color color, bool nullTree);
 	Color color;
 	RBT* root;
+	RBT* parent;
 };
+
+
 template<class btElementType>
-RBT<btElementType>::RBT() {
-	BST<int>::BST();
+RBT<btElementType>::RBT() : BST(){
+
 	color = Red;
-	RBT<btElementType> *root;
+	root = 0;
 
 }
 
 
 template<class btElementType>
-void 
-RBT<btElementType>::insert(btElementType& d) {
-
-	if (nullTree) {
-		nullTree = false;
-		leftTree = new RBT;
-		rightTree = new RBT;
-		data = d;
-		color = Red;
-	}
-	else if (data == d) {
-		data = d;
-	}
-	else if (d < data) {
-		left()->insert(d);
-		/*cout << typeid(leftTree).name() << endl;*/
-	}
-	else
-		right()->insert(d);
+RBT<btElementType>::RBT(btElementType data, Color color, bool nullTree){
+	this->data = data;
+	this->color = color;
+	this->nullTree = nullTree;
 
 }
+
+//template<class btElementType>
+//void 
+//RBT<btElementType>::insert(btElementType& d) {
+//
+//	if (nullTree) {
+//		nullTree = false;
+//		leftTree = new RBT;
+//		rightTree = new RBT;
+//		data = d;
+//		color = Red;
+//	}
+//	else if (data == d) {
+//		data = d;
+//	}
+//	else if (d < data) {
+//		left()->insert(d);
+//		/*cout << typeid(leftTree).name() << endl;*/
+//	}
+//	else
+//		right()->insert(d);
+//
+//}
 
 template<class btElementType>
 string
@@ -107,15 +118,15 @@ void RBT<btElementType>::fixViolation(RBT*& root, RBT*& pt)
 	RBT* parent_pt = NULL;
 	RBT* grand_parent_pt = NULL;
 
-	while ((pt != root) && (pt->color != Black) && (((RBT < btElementType >*)pt->parent())->color == Red))
+	while ((pt != root) && (pt->color != Black) && (pt->parent->color == Red))
 	{
-		parent_pt = ((RBT < btElementType >*)pt->parent());
-		grand_parent_pt = ((RBT < btElementType >*)pt->parent()->parent());
+		parent_pt = pt->parent;
+		grand_parent_pt = pt->parent->parent;
 
 		// Case A : pt의 아버지는 할아버지의 왼쪽 child
 		if (parent_pt == grand_parent_pt->left())
 		{
-			RBT* uncle_pt = ((RBT < btElementType >*)grand_parent_pt->right());
+			RBT* uncle_pt =grand_parent_pt->right();
 
 			// Case1 : 삼촌 또한 빨강, 오직 Recoloring 실행
 			if (!uncle_pt->isEmpty() && ((RBT < btElementType >*)uncle_pt)->color == Red)
@@ -131,7 +142,7 @@ void RBT<btElementType>::fixViolation(RBT*& root, RBT*& pt)
 				{
 					rotateLeft(root, parent_pt);
 					pt = parent_pt;
-					parent_pt = ((RBT < btElementType >*)pt->parent());
+					parent_pt = ((RBT < btElementType >*)pt->parent);
 				}
 				// Case3 : pt는 그 아버지의 왼쪽 Child, Right-Rotate실행
 				rotateRight(root, grand_parent_pt);
@@ -157,7 +168,7 @@ void RBT<btElementType>::fixViolation(RBT*& root, RBT*& pt)
 				if (pt == parent_pt->left()) {
 					rotateRight(root, parent_pt);
 					pt = parent_pt;
-					parent_pt = ((RBT < btElementType >*)pt->parent());
+					parent_pt = ((RBT < btElementType >*)pt->parent);
 				}
 				// Case3 : pt는 그 아버지의 오른쪽 Child, Left-Rotate실행
 				rotateLeft(root, grand_parent_pt);
@@ -179,21 +190,21 @@ void RBT<btElementType>::rotateLeft(RBT*& root, RBT*& pt)
 	((RBT < btElementType >*)pt)->rightTree = pt_right->left();
 
 	if (!pt->right()->isEmpty())
-		((RBT < btElementType >*)pt->right())->parentTree = pt;
+		((RBT < btElementType >*)pt->right())->parent = pt;
 
-	pt_right->parentTree = pt->parent();
+	pt_right->parent = pt->parent;
 
-	if (pt->parentTree == NULL)
+	if (pt->parent == NULL)
 		root = pt_right;
 
-	else if (pt == ((RBT < btElementType >*)pt->parent())->leftTree)
-		((RBT < btElementType >*)pt->parent())->leftTree = pt_right;
+	else if (pt == ((RBT < btElementType >*)pt->parent)->leftTree)
+		((RBT < btElementType >*)pt->parent)->leftTree = pt_right;
 
 	else
-		((RBT < btElementType >*) pt->parent())->rightTree = pt_right;
+		((RBT < btElementType >*) pt->parent)->rightTree = pt_right;
 
 	pt_right->leftTree = pt;
-	pt->parentTree = pt_right;
+	pt->parent = pt_right;
 }
 
 
@@ -206,20 +217,56 @@ void RBT<btElementType>::rotateRight(RBT*& root, RBT*& pt)
 	((RBT < btElementType >*)pt)->leftTree = pt_left->right();
 
 	if (!pt->left()->isEmpty())
-		((RBT < btElementType >*)pt->left())->parentTree = pt;
+		((RBT < btElementType >*)pt->left())->parent = pt;
 
-	pt_left->parentTree = pt->parent();
+	pt_left->parent = pt->parent;
 
-	if (pt->parentTree == NULL)
+	if (pt->parent == NULL)
 		root = pt_left;
 
-	else if (pt == ((RBT < btElementType >*)pt->parent())->leftTree)
-		((RBT < btElementType >*)pt->parent())->leftTree = pt_left;
+	else if (pt == ((RBT < btElementType >*)pt->parent)->leftTree)
+		((RBT < btElementType >*)pt->parent)->leftTree = pt_left;
 
 	else
-		((RBT < btElementType >*) pt->parent())->rightTree = pt_left;
+		((RBT < btElementType >*) pt->parent)->rightTree = pt_left;
 
 	pt_left->rightTree = pt;
-	pt->parentTree = pt_left;
+	pt->parent = pt_left;
+}
+
+template < class btElementType >
+void RBT <btElementType>::insert(btElementType& d)
+{
+	RBT<btElementType>* pt = new RBT(d, Red, false);
+	//cout << pt->root << endl;
+	root = getRoot(root, pt, d);
+	cout << "----------" << endl;
+	cout << root->data<< endl;
+	cout << root->left()->data << endl;
+	cout << root->right()->data << endl;
+
+	fixViolation(root, pt);
+}
+
+template < class btElementType >
+RBT <btElementType>* RBT <btElementType>::getRoot(RBT* root, RBT* pt, btElementType& d)
+{
+	if (root == NULL || root->isEmpty()) {
+		pt->leftTree = new RBT(d, Black, true);
+		pt->rightTree = new RBT(d, Black, true);
+		
+		return pt;
+	}
+	if (pt->getData() < root->getData())
+	{
+		root->leftTree = getRoot(root->left(), pt, d);
+		root->left()->parent = root;
+	}
+	else if (pt->getData() > root->getData())
+	{
+		root->rightTree = getRoot(root->right(), pt, d);
+		root->right()->parent = root;
+	}
+	return root;
 }
 

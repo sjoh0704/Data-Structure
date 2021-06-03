@@ -186,6 +186,12 @@
     <ClCompile Include="binary_tree.cpp">
       <Filter>소스 파일\연습</Filter>
     </ClCompile>
+    <ClCompile Include="chained_hash_table.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
+    <ClCompile Include="homework3.cpp">
+      <Filter>소스 파일\과제</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Time.h">
@@ -234,6 +240,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="BST.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="RBTree.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="RBT.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

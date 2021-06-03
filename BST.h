@@ -2,6 +2,7 @@
 #include"BinaryTree.h"
 template<class btElementType>
 class BST : public BinaryTree<int> { //템플릿에 미리 인수를 줌으로써 this를 쓰지 않고 변수참조가 가능
+//class BST : public BinaryTree<char>{
 public:
 	BST();
 	virtual void insert(const btElementType& data);
@@ -23,16 +24,17 @@ BST<btElementType>::insert(const btElementType& d) {
 		data = d;
 	}
 	else if (d < data)
-		leftTree->insert(d);
+		((BST < btElementType >*) leftTree)->insert(d);
+
 	else
-		rightTree->insert(d);
+		((BST < btElementType >*) leftTree)->insert(d);
 }
 
 template<class btElementType>
 BinaryTree<btElementType>*
 BST<btElementType>::retreive(const btElementType& d) {
 	if (nullTree || d == data)
-		return this;
+		return (BST<btElementType>*)this;
 	else if (d < data)
 		return ((BST<btElementType>*)leftTree)->retreive(d);
 	else

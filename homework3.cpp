@@ -5,7 +5,6 @@ using namespace std;
 typedef RBT<int> intRBT;
 typedef intRBT* RBTPtr;
 void printTree(RBTPtr start);
-
 int main() {
 
 	RBTPtr a = new intRBT;
@@ -27,40 +26,39 @@ int main() {
 
 void printTree(RBTPtr start){
 
-	cout << start->getData() << endl;
+	cout << start->getData() << "/" << start->getColor()<<endl;
 	
-
 	if (start->left()->isEmpty())
 		cout << 0;
 	else
-		cout << start->left()->getData();
+		cout << start->left()->getData()<< "/" << start->left()->getColor();
 
 
 	if (start->right()->isEmpty())
 		cout << "\t" << 0 << endl;
 	else
-		cout << "\t" << start->right()->getData() << endl;
+		cout << "\t" << start->right()->getData() << "/" << start->right()->getColor() << endl;
 
 
 	if (start->left()->left()->isEmpty())
 		cout <<0;
 	else
-		cout <<start->left()->left()->getData();
+		cout <<start->left()->left()->getData() << "/" << start->left()->left()->getColor();
 
 	if (start->left()->right()->isEmpty())
 		cout << "\t" <<0;
 	else
-	cout << "\t" << start->left()->right()->getData();
+	cout << "\t" << start->left()->right()->getData() << "/" << start->left()->right()->getColor();
 
 	if (start->right()->left()->isEmpty())
 		cout << "\t" << 0;
 	else
-		cout << "\t" << start->right()->left()->getData();
+		cout << "\t" << start->right()->left()->getData() << "/" << start->right()->left()->getColor();
 
 	if (start->right()->right()->isEmpty())
 		cout << "\t" << 0 << endl;
 	else
-		cout << "\t" << start->right()->right()->getData() << endl;
+		cout << "\t" << start->right()->right()->getData() << endl << "/" << start->right()->right()->getColor();
 
 	
 

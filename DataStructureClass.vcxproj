@@ -26,9 +26,12 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="binary_tree.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="bubble_sort.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="chained_hash_table.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="CPhone.cpp" />
@@ -50,6 +53,7 @@
     <ClCompile Include="homework2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="homework3.cpp" />
     <ClCompile Include="inordered_list.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -176,6 +180,8 @@
     <ClInclude Include="Pharmacy.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Queue2.h" />
+    <ClInclude Include="RBT.h" />
+    <ClInclude Include="RBTree.h" />
     <ClInclude Include="StackArray.h" />
     <ClInclude Include="Table.h" />
     <ClInclude Include="Table2.h" />

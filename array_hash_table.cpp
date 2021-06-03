@@ -124,7 +124,7 @@ HashTable<tableKeyType, tableDataType>::search(int& pos, const tableKeyType key)
 int main() {
 
 
-	HashTable<int, string> table;0
+	HashTable<int, string> table;
 	table.insert(19960101, "James");
 	table.insert(19960102, "panda");
 	table.insert(19960103, "Agile");

@@ -27,6 +27,7 @@ protected:
 template<class btElementType>
 BinaryTree<btElementType>::BinaryTree() {
 	nullTree = true;
+	data = 0;
 	leftTree = 0;
 	rightTree = 0;
 }

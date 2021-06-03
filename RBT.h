@@ -2,6 +2,7 @@
 #include <iostream>
 #include "BST.h"
 #include<queue>
+#include<string>
 using namespace std;
 enum Color {Red, Black};
 
@@ -13,7 +14,7 @@ public:
 	//                              크기를 비교하여 넣는 BST 규칙을 따르지만, RBT에는 각 노드가 색깔을 가지며 RB Tree의 규칙에 
 	//								위배되지 않게끔 insert된다. 삭제할 때도 마찬가지로 RB Tree의 특성에 맞게 삭제된다.
 	RBT();
-	RBT(btElementType _treeData, Color color, bool _nullTree);
+	
 	void insert(btElementType& d);
 	// Precondition : insert할 데이터를 받아옴
 	// Postcondition : 색깔에 따른 Red Black Tree로 변환하여 insert됨
@@ -39,18 +40,28 @@ public:
 	bool Search_Line(queue<RBT*> q, btElementType nullData);
 	// Precondition : Print_Level_Order 함수에서 큐를 받아옴
 	// Return : 큐에 있는 노드들 중에 Child가 하나라도 있으면 True 반환
+	string getColor();
+	RBT <btElementType>* left();
+	RBT <btElementType>* right();
+
 protected:
+	RBT(btElementType data, Color color, bool nullTree);
 	Color color;
+	RBT* root;
 };
 template<class btElementType>
 RBT<btElementType>::RBT() {
 	BST<int>::BST();
-	color = Black;
+	color = Red;
+	RBT<btElementType> *root;
+
 }
+
 
 template<class btElementType>
 void 
 RBT<btElementType>::insert(btElementType& d) {
+
 	if (nullTree) {
 		nullTree = false;
 		leftTree = new RBT;
@@ -61,9 +72,154 @@ RBT<btElementType>::insert(btElementType& d) {
 	else if (data == d) {
 		data = d;
 	}
-	else if (d < data)
-		leftTree->insert(d);
+	else if (d < data) {
+		left()->insert(d);
+		/*cout << typeid(leftTree).name() << endl;*/
+	}
 	else
-		rightTree->insert(d);
+		right()->insert(d);
 
 }
+
+template<class btElementType>
+string
+RBT<btElementType>::getColor() {
+	if (color == Red)
+		return "R";
+	else if(color==Black)
+		return "B";
+}
+template<class btElementType>
+RBT <btElementType>* 
+RBT<btElementType>::left() {
+	return (RBT <btElementType>*)(BST::left());
+}
+template<class btElementType>
+RBT <btElementType>* 
+RBT<btElementType>::right() {
+	return (RBT <btElementType>*)(BST::right());
+}
+
+
+template < class btElementType >
+void RBT<btElementType>::fixViolation(RBT*& root, RBT*& pt)
+{
+	RBT* parent_pt = NULL;
+	RBT* grand_parent_pt = NULL;
+
+	while ((pt != root) && (pt->color != Black) && (((RBT < btElementType >*)pt->parent())->color == Red))
+	{
+		parent_pt = ((RBT < btElementType >*)pt->parent());
+		grand_parent_pt = ((RBT < btElementType >*)pt->parent()->parent());
+
+		// Case A : pt의 아버지는 할아버지의 왼쪽 child
+		if (parent_pt == grand_parent_pt->left())
+		{
+			RBT* uncle_pt = ((RBT < btElementType >*)grand_parent_pt->right());
+
+			// Case1 : 삼촌 또한 빨강, 오직 Recoloring 실행
+			if (!uncle_pt->isEmpty() && ((RBT < btElementType >*)uncle_pt)->color == Red)
+			{
+				grand_parent_pt->color = Red;
+				parent_pt->color = Black;
+				uncle_pt->color = Black;
+				pt = grand_parent_pt;
+			}
+			else {
+				// Case2 : pt는 그 아버지의 오른쪽 Child, Left-Rotate실행
+				if (pt == parent_pt->right())
+				{
+					rotateLeft(root, parent_pt);
+					pt = parent_pt;
+					parent_pt = ((RBT < btElementType >*)pt->parent());
+				}
+				// Case3 : pt는 그 아버지의 왼쪽 Child, Right-Rotate실행
+				rotateRight(root, grand_parent_pt);
+				Color temp = parent_pt->color;
+				parent_pt->color = grand_parent_pt->color;
+				grand_parent_pt->color = temp;
+				pt = parent_pt;
+			}
+		}
+
+		// CaseB : pt의 아버지는 할아버지의 오른쪽 Child
+		else {
+			RBT* uncle_pt = ((RBT < btElementType >*)grand_parent_pt->left());
+			// Case1 : pt의 삼촌은 또한 빨간색, 오로지 Recoloring 실행
+			if ((!uncle_pt->isEmpty()) && (uncle_pt->color == Red)) {
+				grand_parent_pt->color = Red;
+				parent_pt->color = Black;
+				uncle_pt->color = Black;
+				pt = grand_parent_pt;
+			}
+			else {
+				// Case2 : pt는 그 아버지의 왼쪽 Child, Right-Rotate실행
+				if (pt == parent_pt->left()) {
+					rotateRight(root, parent_pt);
+					pt = parent_pt;
+					parent_pt = ((RBT < btElementType >*)pt->parent());
+				}
+				// Case3 : pt는 그 아버지의 오른쪽 Child, Left-Rotate실행
+				rotateLeft(root, grand_parent_pt);
+				Color temp = parent_pt->color;
+				parent_pt->color = grand_parent_pt->color;
+				grand_parent_pt->color = temp;
+				pt = parent_pt;
+			}
+		}
+	}
+	root->color = Black;
+}
+
+template <class btElementType>
+void RBT<btElementType>::rotateLeft(RBT*& root, RBT*& pt)
+{
+	RBT* pt_right = ((RBT < btElementType >*)pt->right());
+
+	((RBT < btElementType >*)pt)->rightTree = pt_right->left();
+
+	if (!pt->right()->isEmpty())
+		((RBT < btElementType >*)pt->right())->parentTree = pt;
+
+	pt_right->parentTree = pt->parent();
+
+	if (pt->parentTree == NULL)
+		root = pt_right;
+
+	else if (pt == ((RBT < btElementType >*)pt->parent())->leftTree)
+		((RBT < btElementType >*)pt->parent())->leftTree = pt_right;
+
+	else
+		((RBT < btElementType >*) pt->parent())->rightTree = pt_right;
+
+	pt_right->leftTree = pt;
+	pt->parentTree = pt_right;
+}
+
+
+
+template <class btElementType>
+void RBT<btElementType>::rotateRight(RBT*& root, RBT*& pt)
+{
+	RBT* pt_left = ((RBT < btElementType >*)pt->left());
+
+	((RBT < btElementType >*)pt)->leftTree = pt_left->right();
+
+	if (!pt->left()->isEmpty())
+		((RBT < btElementType >*)pt->left())->parentTree = pt;
+
+	pt_left->parentTree = pt->parent();
+
+	if (pt->parentTree == NULL)
+		root = pt_left;
+
+	else if (pt == ((RBT < btElementType >*)pt->parent())->leftTree)
+		((RBT < btElementType >*)pt->parent())->leftTree = pt_left;
+
+	else
+		((RBT < btElementType >*) pt->parent())->rightTree = pt_left;
+
+	pt_left->rightTree = pt;
+	pt->parentTree = pt_left;
+}
+

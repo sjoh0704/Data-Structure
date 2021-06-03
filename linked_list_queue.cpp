@@ -75,7 +75,6 @@ int main() {
 	queue.enqueue(4);
 	queue.enqueue(2);
 	queue.enqueue(3);
-	cout << queue.front() << endl;
 	queue.enqueue(4);
 	queue.enqueue(1);
 

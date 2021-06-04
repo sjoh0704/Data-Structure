@@ -19,6 +19,7 @@
 //	Postcondition : Variable elem contains the next item 		in L, if there is one, and the next counter advances by 		one; if there is no next element, none.
 //	Return:	true ifand only if there is a next item.
 
+#include"ListIter.h"
 typedef int ListElementType;
 const int maxListSize = 100;
 class List

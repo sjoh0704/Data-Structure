@@ -53,7 +53,9 @@
     <ClCompile Include="homework2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="homework3.cpp" />
+    <ClCompile Include="homework3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="inordered_list.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -72,9 +74,15 @@
     <ClCompile Include="linked_list_queue.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="List.cpp" />
-    <ClCompile Include="List2.cpp" />
-    <ClCompile Include="List3.cpp" />
+    <ClCompile Include="List.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="List2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="List3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="List4.cpp" />
     <ClCompile Include="List5.cpp" />
     <ClCompile Include="mystack.cpp">
@@ -87,6 +95,7 @@
     <ClCompile Include="prac01.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="prac019.cpp" />
     <ClCompile Include="prac16.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -169,14 +178,18 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ALGraph.h" />
     <ClInclude Include="BinaryTree.h" />
     <ClInclude Include="BST.h" />
     <ClInclude Include="CPhone.h" />
+    <ClInclude Include="DALGraph.h" />
+    <ClInclude Include="Graph.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="List2.h" />
     <ClInclude Include="List3.h" />
     <ClInclude Include="List4.h" />
     <ClInclude Include="List5.h" />
+    <ClInclude Include="ListIter.h" />
     <ClInclude Include="Pharmacy.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Queue2.h" />
@@ -186,6 +199,7 @@
     <ClInclude Include="Table.h" />
     <ClInclude Include="Table2.h" />
     <ClInclude Include="Time.h" />
+    <ClInclude Include="UALGraph.h" />
     <ClInclude Include="Value.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>

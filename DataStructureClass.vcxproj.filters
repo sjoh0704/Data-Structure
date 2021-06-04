@@ -192,6 +192,9 @@
     <ClCompile Include="homework3.cpp">
       <Filter>소스 파일\과제</Filter>
     </ClCompile>
+    <ClCompile Include="prac019.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Time.h">
@@ -246,6 +249,21 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="RBT.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ListIter.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ALGraph.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="UALGraph.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DALGraph.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

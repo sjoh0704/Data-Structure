@@ -192,7 +192,10 @@
     <ClCompile Include="homework3.cpp">
       <Filter>소스 파일\과제</Filter>
     </ClCompile>
-    <ClCompile Include="prac019.cpp">
+    <ClCompile Include="prac20.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="prac19.cpp">
       <Filter>소스 파일\실습</Filter>
     </ClCompile>
   </ItemGroup>
@@ -264,6 +267,15 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="DALGraph.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="amGraph.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="dAMGraph.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="uAMGraph.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

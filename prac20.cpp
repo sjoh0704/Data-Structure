@@ -6,7 +6,8 @@
 #include<fstream>
 using namespace std;
 int main() {
-    const char* inFileName = "graph.dat";
+
+    const char* inFileName = "graph2.dat";
     ifstream ifs(inFileName);
     assert(ifs); // make sure graph exists
     int n;

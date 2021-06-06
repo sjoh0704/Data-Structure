@@ -6,10 +6,8 @@
 int stringToInt(string value);
 int main()
 {
-
-
+	cout << "20160518 오승주" << endl;
 	Table<int, int> table1;
-
 	// 1번 dump
 	table1.insert(19960704, 19960704);
 	table1.insert(19960705, 19960705);
@@ -19,23 +17,17 @@ int main()
 	table1.insert(19960709, 19960709);
 	table1.insert(19960710, 19960710);
 	table1.dump();
-	
-	
 	// 2번 dump
 	table1.deleteKey(19960707);
 	table1.deleteKey(19960705);
 	table1.insert(19960718, 19960718);
 	table1.dump();
-
-
 	//3번 dump
 	Table<int, CPhone> table2;
 	table2.insert(19960704, CPhone("James", 19960704));
 	table2.insert(19960705, CPhone("Agile", 19960705));
 	table2.insert(19960706, CPhone("Nicky", 19960706));
 	table2.dump();
-
-
 	//4번 dump
 	Table<int, CPhone> table3;
 	table3.insert(stringToInt("James"), CPhone("James", 19960704));

@@ -5,6 +5,7 @@
 using namespace std;
 int stringToInt(string value);
 int main() {
+	cout << "20160518 오승주" << endl;
 	Table2<int, int> table;
 	table.insert(19960704, 19960704);
 	table.insert(19960705, 19960705);
@@ -17,9 +18,7 @@ int main() {
 	table.insert(19960716, 19960716);
 	table.insert(19960717, 19960717);
 	table.insert(19960718, 19960718);
-
 	table.dump();
-
 
 	Table2<int, CPhone> table2;
 	table2.insert(19960704, CPhone("James", 19960704));
@@ -36,13 +35,10 @@ int main() {
 	table3.dump();
 	CPhone a;
 
-	if (table3.lookup(stringToInt("Agi4le"), a))
+	if (table3.lookup(stringToInt("Agile"), a))
 		cout << a << endl;
 	else
 		cout << "존재하지 않습니다." << endl;
-	
-
-
 
 	return 0;
 }

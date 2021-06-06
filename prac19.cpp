@@ -7,6 +7,7 @@
 
 using namespace std;
 int main() {
+    cout << "20160518 ©ю╫баж" << endl;
     // read graph from a file
        // first entry is size of graph
     const char* inFileName = "graph.dat";

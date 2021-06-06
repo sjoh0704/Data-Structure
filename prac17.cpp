@@ -4,6 +4,7 @@
 #include"BinaryTree.h"
 using namespace std;
 int main() {
+	cout << "20160518 ©ю╫баж" << endl;
 	BinaryTree<char> bt1;
 	bt1.insert('G');
 	bt1.left()->insert('E');
@@ -20,8 +21,6 @@ int main() {
 	cout << bt1.left()->right()->getData() << "\t";
 	cout << bt1.right()->left()->getData() << "\t";
 	cout << bt1.right()->right()->getData() << endl;
-
-
 
 	return 0;
 }

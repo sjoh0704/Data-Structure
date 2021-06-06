@@ -6,7 +6,7 @@ class BST : public BinaryTree<int> { //템플릿에 미리 인수를 줌으로써 this를 쓰지
 public:
 	BST();
 	virtual void insert(const btElementType& data);
-	virtual BinaryTree<btElementType>* retreive(const btElementType& data);
+	virtual BST<btElementType>* retreive(const btElementType& data);
 
 };
 
@@ -27,11 +27,11 @@ BST<btElementType>::insert(const btElementType& d) {
 		((BST < btElementType >*) leftTree)->insert(d);
 
 	else
-		((BST < btElementType >*) leftTree)->insert(d);
+		((BST < btElementType >*) rightTree)->insert(d);
 }
 
 template<class btElementType>
-BinaryTree<btElementType>*
+BST<btElementType>*
 BST<btElementType>::retreive(const btElementType& d) {
 	if (nullTree || d == data)
 		return (BST<btElementType>*)this;

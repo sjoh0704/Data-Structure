@@ -6,7 +6,7 @@
 #include<fstream>
 using namespace std;
 int main() {
-
+    cout << "20160518 ©ю╫баж" << endl;
     const char* inFileName = "graph2.dat";
     ifstream ifs(inFileName);
     assert(ifs); // make sure graph exists

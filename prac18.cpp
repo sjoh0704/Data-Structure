@@ -4,7 +4,7 @@
 #include"BST.h"
 using namespace std;
 int main() {
-
+	cout << "20160518 오승주" << endl;
 	typedef BST<int> intBST;
 	typedef intBST* intBSTPtr;
 	intBSTPtr b = new intBST;
@@ -19,12 +19,19 @@ int main() {
 	b->insert(31);
 	b->insert(37);
 	b->insert(12);
-	
+
+	cout << "11 찾기 결과: ";
 	intBSTPtr get11((intBSTPtr)b->retreive(11));
 	if (get11->isEmpty())
-		cout << "11 not found" << endl;
+		cout << "not found" << endl;
 	else
-		cout << "11 found" << endl;
+		cout << "found" << endl;
+	cout << "\n13 찾기 결과: ";
+	intBSTPtr get13((intBSTPtr)b->retreive(13));
+	if (get13->isEmpty())
+		cout << "not found" << endl;
+	else
+		cout << "found" << endl;
 
 	return 0;
 }

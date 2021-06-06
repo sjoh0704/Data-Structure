@@ -43,8 +43,8 @@ BinaryTree<btElementType>::insert(const btElementType& data) {
 	assert(isEmpty());
 	if (nullTree) {
 		nullTree = false;
-		leftTree = new BinaryTree();
-		rightTree = new BinaryTree();
+		leftTree = new BinaryTree;
+		rightTree = new BinaryTree;
 		this->data = data;
 	}
 }

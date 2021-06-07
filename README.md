@@ -16,3 +16,11 @@
 14. queue linked list
 15. table
 16. array hash table
+17. chained hash table
+18. binary tree
+19. binary search tree
+20. red black tree
+21. undirected adjacency list graph
+22. directed adjacency list graph
+23. undirected adjacency matrix graph
+24. directed adjacency matrix graph

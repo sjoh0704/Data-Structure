@@ -15,3 +15,4 @@
 13. queue array
 14. queue linked list
 15. table
+16. array hash table

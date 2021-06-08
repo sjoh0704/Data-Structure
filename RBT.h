@@ -16,7 +16,7 @@ public:
 	RBT <btElementType>* right();
 	
 protected:
-	void printCase();
+	void printCase(); 
 	void rotateLeft(RBT*& root, RBT*& pt);
 	void rotateRight(RBT*& root, RBT*& pt);
 	void resolve(RBT*& root, RBT*& pt);

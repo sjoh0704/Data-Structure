@@ -81,6 +81,7 @@ int main() {
 	HashTable h;
 	h.insert(1, 10);
 	h.insert(2, 32);
+	h.deleteKey(2);
 	int data;
 
 	if (h.lookup(2, data)){

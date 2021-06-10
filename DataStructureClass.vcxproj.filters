@@ -198,6 +198,9 @@
     <ClCompile Include="prac19.cpp">
       <Filter>소스 파일\실습</Filter>
     </ClCompile>
+    <ClCompile Include="hashtable_practice.cpp">
+      <Filter>소스 파일\연습</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Time.h">

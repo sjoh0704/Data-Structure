@@ -24,3 +24,5 @@
 22. directed adjacency list graph
 23. undirected adjacency matrix graph
 24. directed adjacency matrix graph
+25. topological sorting 
+26. transitive closure
